@@ -1,7 +1,6 @@
-import org.junit.jupiter.api.AfterAll;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.*;
+
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class LifeCycleTest {
 
@@ -16,5 +15,12 @@ public class LifeCycleTest {
 
     @AfterEach
     void teardown_for_junit5() {}
+
+
+    @Test
+    @DisplayName("ชื่อแจ่มมาก ๆ เลยนะ")
+    public void xxx() {
+        assertTrue(true);
+    }
 
 }
