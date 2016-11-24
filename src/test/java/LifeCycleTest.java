@@ -1,6 +1,6 @@
 import org.junit.jupiter.api.*;
 
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class LifeCycleTest {
 
@@ -21,6 +21,27 @@ public class LifeCycleTest {
     @DisplayName("ชื่อแจ่มมาก ๆ เลยนะ")
     public void xxx() {
         assertTrue(true);
+    }
+
+    @Test
+    @Disabled
+    public void yyy() {
+        assertTrue(false);
+    }
+
+    @Test
+    public void shouldThrowNullPointerException() {
+        Throwable exception = expectThrows(NullPointerException.class, () -> {
+        throw new NullPointerException("Try to do");
+        });
+        assertEquals("Try to do", exception.getMessage());
+    }
+
+    @Test
+    public void checkThrowNumberFormatException() {
+        assertThrows(NumberFormatException.class, ()-> {
+           Integer.valueOf(null);
+        });
     }
 
 }
